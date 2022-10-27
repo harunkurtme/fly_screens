@@ -27,10 +27,11 @@ class _CompassScreenState extends State<CompassScreen> {
       children: [
         AnimatedRotation(
           duration: _duration,
-          turns: 14.25*(math.pi)/180,
-          child: Compass(
-            color: Colors.blue,
-          ),
+          turns: -28.5*(math.pi)/180, //14.25 90 degree
+          child: Container(
+            child: Compass(),
+            
+          )
         ),
       ],
     );

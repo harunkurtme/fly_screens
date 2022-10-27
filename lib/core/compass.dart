@@ -5,24 +5,27 @@ class Compass extends StatelessWidget {
   final double _height;
   final double _thickness;
   final Color _color;
-  const Compass({Key? key, double? height, double? thickness,Color? color}) : _height=height??200, _thickness = thickness ?? 10,_color=color??Colors.black, super(key: key);
+  const Compass({Key? key, double? height, double? thickness,Color? color}) : _height=height??100, _thickness = thickness ?? 4,_color=color??Colors.black, super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      
+      // mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        RotatedBox(quarterTurns: 3,
-          child: Icon(Icons.arrow_upward,
-          size: 90,
-          )
+        Expanded(
+          child: RotatedBox(quarterTurns: 3,
+            // child: Divider(
+            //   color: _color,
+            //   height: _height,
+            //   thickness: _thickness,
+            // )
+            child: Icon(
+              Icons.airplanemode_active,
+              size: _height,
+            ),
+          ),
         ),
-        RotatedBox(quarterTurns: 3,
-          child: Icon(Icons.arrow_upward,
-          size: 90,
-          )
-        ), 
       ],
     );
   }
