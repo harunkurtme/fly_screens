@@ -9,13 +9,20 @@ class Compass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      
       children: [
-         Divider(
-          color: _color,
-          height: _height,
-          thickness: _thickness,
+        RotatedBox(quarterTurns: 3,
+          child: Icon(Icons.arrow_upward,
+          size: 90,
+          )
         ),
+        RotatedBox(quarterTurns: 3,
+          child: Icon(Icons.arrow_upward,
+          size: 90,
+          )
+        ), 
       ],
     );
   }
