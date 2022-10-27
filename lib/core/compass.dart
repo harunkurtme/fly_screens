@@ -9,24 +9,17 @@ class Compass extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      // mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Expanded(
-          child: RotatedBox(quarterTurns: 3,
-            // child: Divider(
-            //   color: _color,
-            //   height: _height,
-            //   thickness: _thickness,
-            // )
-            child: Icon(
-              Icons.airplanemode_active,
-              size: _height,
-            ),
-          ),
-        ),
-      ],
+    return RotatedBox(quarterTurns: 3,
+      // child: Divider(
+      //   color: _color,
+      //   height: _height,
+      //   thickness: _thickness,
+      // )
+      child: Icon(
+        Icons.airplanemode_active,
+        size: _height,
+        color: Colors.white,
+      ),
     );
   }
 }

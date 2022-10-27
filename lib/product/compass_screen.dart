@@ -14,11 +14,13 @@ class CompassScreen extends StatefulWidget {
 class _CompassScreenState extends State<CompassScreen> {
 
   late Duration _duration;
+   late double turns_val;
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    turns_val=0;
     this._duration = this.widget.duration??Duration(milliseconds: 200);
   }
   @override
@@ -27,10 +29,20 @@ class _CompassScreenState extends State<CompassScreen> {
       children: [
         AnimatedRotation(
           duration: _duration,
-          turns: -28.5*(math.pi)/180, //14.25 90 degree
+          turns: -(28.5+ turns_val)*(math.pi)/180, //14.25 90 degree
           child: Container(
-            child: Compass(),
-            
+            child: Container(
+              margin: EdgeInsets.all(8.0),
+              height: 300,
+              width: 300,
+              decoration:  _BoxDecoration.decoration,
+              child: Stack(
+                children: [
+                  Center(child: Compass()),
+                ],
+              ),
+            ),
+            decoration: _BoxDecoration.outSidedecoration
           )
         ),
       ],
@@ -38,3 +50,14 @@ class _CompassScreenState extends State<CompassScreen> {
   }
 }
 
+mixin BoxCompassDecoration{
+  static const decoration =BoxDecoration(
+              color: Colors.black,
+              shape: BoxShape.circle
+            );
+  static const outSidedecoration =BoxDecoration(
+              color: Colors.grey,
+              shape: BoxShape.circle
+            );
+          
+}
