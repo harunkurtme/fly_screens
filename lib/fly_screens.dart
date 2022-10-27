@@ -6,6 +6,7 @@
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:fly_screens/product/compass_screen.dart';
 
 class FlyScreens {
   static const MethodChannel _channel = MethodChannel('fly_screens');
@@ -15,3 +16,5 @@ class FlyScreens {
     return version;
   }
 }
+
+// CompassScreen

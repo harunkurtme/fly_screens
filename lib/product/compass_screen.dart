@@ -3,11 +3,8 @@ import 'package:fly_screens/core/compass.dart';
 
 import 'dart:math' as math;
 
-
 class CompassScreen extends StatefulWidget {
   CompassScreen({Key? key, this.duration}) : super(key: key);
-
-
   Duration? duration;
 
   @override
@@ -22,7 +19,7 @@ class _CompassScreenState extends State<CompassScreen> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    this._duration = this.widget.duration??Duration(milliseconds: 20);
+    this._duration = this.widget.duration??Duration(milliseconds: 200);
   }
   @override
   Widget build(BuildContext context) {
@@ -30,16 +27,11 @@ class _CompassScreenState extends State<CompassScreen> {
       children: [
         AnimatedRotation(
           duration: _duration,
-          turns: 30*2*math.pi/360,
+          turns: 14.25*(math.pi)/180,
           child: Compass(
-
+            color: Colors.blue,
           ),
-        ),AnimatedRotation(
-          duration: _duration,
-          turns: 0*2*math.pi/360,
-          child: Compass(
-
-          ),)
+        ),
       ],
     );
   }
