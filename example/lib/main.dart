@@ -56,16 +56,13 @@ class _MyAppState extends State<MyApp> {
 
           title: const Text('Flight Screen Components'),
         ),
-        body: SingleChildScrollView(
-          scrollDirection :Axis.vertical,
-          child: Center(
-            child: Column(
-              children: [
-                CompassScreen(duration: Duration(milliseconds: 200)),
-                GyroPosition(boxHeight: 100,)
-              ],
-            )
-          ),
+        body: Center(
+          child: Column(
+            children: [
+              CompassScreen(duration: Duration(milliseconds: 200)),
+              GyroPosition(boxHeight: 100,boxWidth: 200,sensorXValue: -14.25/128,sensorYValue: 0,)
+            ],
+          )
         ),
       ),
     );
