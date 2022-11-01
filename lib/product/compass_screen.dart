@@ -25,32 +25,30 @@ class _CompassScreenState extends State<CompassScreen> {
   }
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        AnimatedRotation(
-          duration: _duration,
-          turns: -(28.5+ turns_val)*(math.pi)/180, //14.25 90 degree
-          child: Container(
-            child: Container(
-              margin: EdgeInsets.all(8.0),
-              height: 300,
-              width: 300,
-              decoration:  _BoxDecoration.decoration,
-              child: Stack(
-                children: [
-                  Center(child: Compass()),
-                ],
-              ),
+    return Container(
+      child: Container(
+        margin: EdgeInsets.all(8.0),
+        height: 300,
+        width: 300,
+        decoration:  _BoxDecoration.decoration,
+        child: Stack(
+          children: [
+            Center(child: AnimatedRotation(
+              duration: _duration,
+              turns:  -(-14.25+ turns_val)*(math.pi)/180,
+              child: Compass(),
+              )
             ),
-            decoration: _BoxDecoration.outSidedecoration
-          )
+            // Positioned(child: Text("W",style: TextStyle(color: Colors.yellow),),right: 0.0,bottom: 0.0,top: 0.0,)
+          ],
         ),
-      ],
+      ),
+      decoration: _BoxDecoration.outSidedecoration
     );
   }
 }
 
-mixin BoxCompassDecoration{
+mixin _BoxDecoration{
   static const decoration =BoxDecoration(
               color: Colors.black,
               shape: BoxShape.circle

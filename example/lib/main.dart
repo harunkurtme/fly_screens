@@ -55,7 +55,7 @@ class _MyAppState extends State<MyApp> {
           title: const Text('Plugin example app'),
         ),
         body: Center(
-          child: CompassScreen(duration: Duration(milliseconds: 20))
+          child: CompassScreen(duration: Duration(milliseconds: 200))
         ),
       ),
     );
