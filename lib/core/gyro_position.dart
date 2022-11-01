@@ -31,7 +31,7 @@ class GyroPosition extends StatelessWidget {
                   // )
                 ),
                 child: SizedBox(
-                  height: boxHeight.toDouble()*3/2,
+                  height: boxHeight.toDouble()/2+boxHeight.toDouble()*1/(math.pi-(sensorYValue*math.pi/180))/2,
                   width: boxWidth.toDouble(),
                     ),
                   ),
@@ -45,7 +45,7 @@ class GyroPosition extends StatelessWidget {
                   // )
                 ),
                 child: SizedBox(
-                  height: boxHeight.toDouble()/2,
+                  height: boxHeight.toDouble()/2+boxHeight.toDouble()*1/(math.pi+(sensorYValue*math.pi/180)/2),
                   width: boxWidth.toDouble(),
                   ),
                 )
