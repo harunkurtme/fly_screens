@@ -62,7 +62,7 @@ class _MyAppState extends State<MyApp> {
             child: Column(
               children: [
                 CompassScreen(duration: Duration(milliseconds: 200)),
-                GyroPosition()
+                GyroPosition(boxHeight: 100,)
               ],
             )
           ),

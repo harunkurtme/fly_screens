@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 class GyroPosition extends StatelessWidget {
-  const GyroPosition({Key? key}) : super(key: key);
+  const GyroPosition({Key? key, required this.boxHeight}) : super(key: key);
+
+  final int boxHeight; 
 
   @override
   Widget build(BuildContext context) {
@@ -21,17 +23,26 @@ class GyroPosition extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Colors.blue,
                   borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(15)
+                    topLeft: Radius.circular((boxHeight*6/4).toDouble()),
+                    topRight: Radius.circular((boxHeight*6/4).toDouble())
                   )
                 ),
                 child: SizedBox(
-                  height: 100,
+                  height: boxHeight.toDouble(),
                   width: 200,
                     ),
                   ),
               AnimatedContainer(
                 duration: Duration(milliseconds: 100),
-                color: Colors.green,
+                
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular((boxHeight*6/4).toDouble()),
+                    bottomRight: Radius.circular((boxHeight*6/4).toDouble())
+                  )
+                ),
+                
                 child: SizedBox(
                   height: 100,
                   width: 200,
