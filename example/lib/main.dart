@@ -66,7 +66,7 @@ class _MyAppState extends State<MyApp> {
               //   ..rotateY(1.1),
               // // child: Center(child: Icon(Icons.flight,size: 100,))),
               // child: GyroPosition(boxHeight: 100,boxWidth: 200,sensorXValue: -14.25/128,sensorYValue: 150,)),
-              GyroPosition(boxHeight: 15,boxWidth: 200,sensorXValue: 0,sensorYValue: -15,),
+              GyroPosition(boxHeight: 15,boxWidth: 200,sensorXValue: 0,sensorYValue: 80,),
               
             ],
           )
