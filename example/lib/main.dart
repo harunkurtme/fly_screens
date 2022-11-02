@@ -60,8 +60,14 @@ class _MyAppState extends State<MyApp> {
           child: Column(
             children: [
               CompassScreen(duration: Duration(milliseconds: 200)),
-              GyroPosition(boxHeight: 100,boxWidth: 200,sensorXValue: -14.25/128,sensorYValue: 100,),
-              ArmDisarm
+              // Transform(transform: Matrix4.identity()
+              //   ..setEntry(3, 2, 0.003) // col = 2, row = 3 & 0.003 = depth perception in the Z direction
+              //   ..rotateX(.54)
+              //   ..rotateY(1.1),
+              // // child: Center(child: Icon(Icons.flight,size: 100,))),
+              // child: GyroPosition(boxHeight: 100,boxWidth: 200,sensorXValue: -14.25/128,sensorYValue: 150,)),
+              GyroPosition(boxHeight: 15,boxWidth: 200,sensorXValue: 0,sensorYValue: -15,),
+              
             ],
           )
         ),

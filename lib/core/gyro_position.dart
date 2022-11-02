@@ -9,6 +9,11 @@ class GyroPosition extends StatelessWidget {
   final double sensorYValue;
   final double sensorXValue;
 
+  double map(double x, double in_min, double in_max, double out_min, double out_max) {
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -31,7 +36,7 @@ class GyroPosition extends StatelessWidget {
                   // )
                 ),
                 child: SizedBox(
-                  height: boxHeight.toDouble()/2+boxHeight.toDouble()*1/(math.pi-(sensorYValue*math.pi/180))/2,
+                 height: map(sensorYValue, -90, 90, 0, 200),
                   width: boxWidth.toDouble(),
                     ),
                   ),
@@ -44,8 +49,9 @@ class GyroPosition extends StatelessWidget {
                   //   bottomRight: Radius.circular((boxHeight*6*4/4).toDouble())
                   // )
                 ),
+                
                 child: SizedBox(
-                  height: boxHeight.toDouble()/2+boxHeight.toDouble()*1/(math.pi+(sensorYValue*math.pi/180)/2),
+                  height: map(-sensorYValue, -90, 90, 0, 200),
                   width: boxWidth.toDouble(),
                   ),
                 )
@@ -64,6 +70,7 @@ class GyroPosition extends StatelessWidget {
           //     Divider(thickness: 5,height: 10,)
           //   ],
           // )
+          
         ],
       ),),
     );
